@@ -23126,15 +23126,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Subhikshaa S\\.nuget\\packages\\": {}
+    "C:\\Users\\Sivashankar\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Feedback-Analysis",
       "projectName": "Feedback-Analysis",
-      "projectPath": "C:\\Users\\Subhikshaa S\\Documents\\UiPath\\Feedback-Analysis\\.local",
-      "packagesPath": "C:\\Users\\Subhikshaa S\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Subhikshaa S\\Documents\\UiPath\\Feedback-Analysis\\.local"
+      "projectPath": "C:\\Users\\Sivashankar\\Downloads\\New folder\\sem_7\\ARPA\\Hackathon\\UiPath-Feedback-Analysis\\.local",
+      "packagesPath": "C:\\Users\\Sivashankar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sivashankar\\Downloads\\New folder\\sem_7\\ARPA\\Hackathon\\UiPath-Feedback-Analysis\\.local"
     },
     "frameworks": {
       "net8.0-windows7.0": {
