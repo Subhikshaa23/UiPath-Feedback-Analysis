@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CwEZQTh3Bvrgp+gaMEq6YVzChn0Ew3Cxa5K0GBmlZQT4AvKmRe3iTZbEDsAd6rXXZHGa0qZR79pXWd84kiccTw==",
+  "dgSpecHash": "EUh/wlvZ4AUXAyHHK72oeNKfOho9cBRfSeO8PSMRMzmWZzQU6WJulk3wIAnR8g8UsE5g/ccO8C2QWwHNkY0K7A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Subhikshaa S\\Documents\\UiPath\\Feedback-Analysis\\.local\\",
   "expectedPackageFiles": [
@@ -276,6 +276,7 @@
     "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.mlservices.activities\\2.0.3\\uipath.mlservices.activities.2.0.3.nupkg.sha512",
     "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.ocr.activities\\3.20.3\\uipath.ocr.activities.3.20.3.nupkg.sha512",
     "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.ocr.contracts\\2.16.0\\uipath.ocr.contracts.2.16.0.nupkg.sha512",
+    "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.officelibs\\1.0.0\\uipath.officelibs.1.0.0.nupkg.sha512",
     "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.opentelemetry.contracts\\2.1.3\\uipath.opentelemetry.contracts.2.1.3.nupkg.sha512",
     "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.platform\\24.10.3\\uipath.platform.24.10.3.nupkg.sha512",
     "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.system.activities\\24.10.3\\uipath.system.activities.24.10.3.nupkg.sha512",
@@ -288,7 +289,11 @@
     "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.uiautomation.activities.runtime.design\\24.10.0\\uipath.uiautomation.activities.runtime.design.24.10.0.nupkg.sha512",
     "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.vision\\3.13.2\\uipath.vision.3.13.2.nupkg.sha512",
     "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.webapi.activities\\1.21.1\\uipath.webapi.activities.1.21.1.nupkg.sha512",
-    "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.webapi.activities.runtime\\1.21.1\\uipath.webapi.activities.runtime.1.21.1.nupkg.sha512"
+    "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.webapi.activities.runtime\\1.21.1\\uipath.webapi.activities.runtime.1.21.1.nupkg.sha512",
+    "C:\\Users\\Subhikshaa S\\.nuget\\packages\\uipath.word.activities\\1.20.1\\uipath.word.activities.1.20.1.nupkg.sha512",
+    "C:\\Users\\Subhikshaa S\\.nuget\\packages\\xceed.document.net\\2.0.21359.11160\\xceed.document.net.2.0.21359.11160.nupkg.sha512",
+    "C:\\Users\\Subhikshaa S\\.nuget\\packages\\xceed.pdf\\2.0.21359.11160\\xceed.pdf.2.0.21359.11160.nupkg.sha512",
+    "C:\\Users\\Subhikshaa S\\.nuget\\packages\\xceed.words.net\\2.0.21359.11160\\xceed.words.net.2.0.21359.11160.nupkg.sha512"
   ],
   "logs": []
 }
