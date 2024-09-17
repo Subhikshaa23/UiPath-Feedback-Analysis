@@ -1,0 +1,78 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "saveChart&Sequence_13",
+        "dtFeedBack&Sequence_4",
+        "arraySentiments&Sequence_4",
+        "outResultText&Sequence_4",
+        "summaryText&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Sentiment Analysis.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dtFeedback&Sequence_2",
+        "JSONResponse&Sequence_3",
+        "JSONObject&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dtFeedback",
+        "in_inputColumn",
+        "in_targetSentiment",
+        "in_targetConfidence"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Overall Summary.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dtFeedback&Sequence_2",
+        "dtFilteredData&Sequence_2",
+        "columnProfessor&Sequence_2",
+        "columnCourse&Sequence_2",
+        "strFilteredTableText&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dtFeedback",
+        "in_columnOne",
+        "in_columnTwo",
+        "in_columnText1",
+        "in_columnText2",
+        "in_sentiment"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Summarize.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "JSONResponse&Sequence_2",
+        "strText&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_textFile",
+        "out_textSummary"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
