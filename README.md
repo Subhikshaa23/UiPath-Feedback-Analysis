@@ -7,12 +7,9 @@
 - Generation of charts using the Pivot table.
 - Consolidating the summary and charts into a meaningful report.
 
-## Technology Stack
+## Technology Stack & Tools
 - UiPath Studio
 - UiPath AI Center
 - UiPath Orchestrator
 - UiPath Assistant
-- Microsoft Excel & Microsoft Word
-
-## Contributors
-[![Contributors](https://contrib.rocks/image?repo=Subhikshaa23/UiPath-Feedback-Analysis)](https://github.com/Subhikshaa23/UiPath-Feedback-Analysis/graphs/contributors)
+- Microsoft Excel, Microsoft Word & Notepad
