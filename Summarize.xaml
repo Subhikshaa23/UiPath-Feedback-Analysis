@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Summarize" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.MLServices;assembly=UiPath.MLServices" xmlns:uma="clr-namespace:UiPath.MLServices.Activities;assembly=UiPath.MLServices.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Summarize" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.MLServices;assembly=UiPath.MLServices" xmlns:uma="clr-namespace:UiPath.MLServices.Activities;assembly=UiPath.MLServices.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_textFile" Type="InArgument(x:String)" />
     <x:Property Name="out_textSummary" Type="OutArgument(x:String)" />
@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1061.6,817.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>796.8,1157.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Summarize_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -41,6 +41,8 @@
       <x:String>UiPath.MLServices.Enums</x:String>
       <x:String>UiPath.MLServices.Activities</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -96,9 +98,14 @@
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Summarize" sap:VirtualizedContainerService.HintSize="496,752.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Summarize" sap:VirtualizedContainerService.HintSize="595.2,1092.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="JSONResponse" />
       <Variable x:TypeArguments="x:String" Name="strText" />
@@ -108,25 +115,52 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadTextFile File="{x:Null}" Content="[strText]" DisplayName="Read Text File" FileName="[in_textFile]" sap:VirtualizedContainerService.HintSize="433.6,112.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-    <uma:MLSkills ApiKey="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Name="{x:Null}" NumberOfRetries="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" SkillURL="{x:Null}" StatusCode="{x:Null}" Connection="Robot" DisplayName="MLSkill" ExternApiFileType="JSON" sap:VirtualizedContainerService.HintSize="433.6,443.2" sap2010:WorkflowViewState.IdRef="MLSkills_1" Item="[strText]" JsonResponse="[JSONResponse]" NextPageNum="2" RefreshList="False" TimeOutMs="999999999" TotalCount="2">
-      <uma:MLSkills.MLSkillList>
-        <scg:List x:TypeArguments="um:MLSkill" Capacity="4">
-          <um:MLSkill AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/0b453021-dbd9-46ff-b58f-1c009660cb16/479e9a0a-b128-4bb7-b120-ed305c50bd17/cluster-b/textsummarizationmlskill" AccountId="0b453021-dbd9-46ff-b58f-1c009660cb16" Description="" Id="073569c3-6f2a-4cd5-86b9-13c08ba02067" InputDescription="Text to be summarized as a string. On small inputs (less than 300 characters), the model will just return the unaltered input" InputType="JSON" Name="TextSummarizationMLSkill" OutputDescription="Summarized text as a string." ProjectId="c7e0941d-1dd2-4498-aa65-68ddf1e72ef0" TenantId="479e9a0a-b128-4bb7-b120-ed305c50bd17" />
-          <x:Reference>__ReferenceID0</x:Reference>
-        </scg:List>
-      </uma:MLSkills.MLSkillList>
-      <uma:MLSkills.SelectedMLSkill>
-        <um:MLSkill x:Name="__ReferenceID0" AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/0b453021-dbd9-46ff-b58f-1c009660cb16/479e9a0a-b128-4bb7-b120-ed305c50bd17/cluster-b/textsummarizationmlskill1" AccountId="0b453021-dbd9-46ff-b58f-1c009660cb16" Description="" Id="d6b69eeb-a5ce-4fb4-8a96-05aa09753c1d" InputDescription="Text to be summarized as a string. On small inputs (less than 300 characters), the model will just return the unaltered input" InputType="JSON" Name="TextSummarizationMLSkill1" OutputDescription="Summarized text as a string." ProjectId="0f79ec8c-112a-4755-8801-db99c7d03222" TenantId="479e9a0a-b128-4bb7-b120-ed305c50bd17" />
-      </uma:MLSkills.SelectedMLSkill>
-    </uma:MLSkills>
-    <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[out_textSummary]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[JSONResponse.ToString]</InArgument>
-      </Assign.Value>
-    </Assign>
+    <ui:ReadTextFile File="{x:Null}" Content="[strText]" DisplayName="Read Text File" FileName="[in_textFile]" sap:VirtualizedContainerService.HintSize="532.8,112.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="532.8,891.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="496,636.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uma:MLSkills ApiKey="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Name="{x:Null}" NumberOfRetries="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" SkillURL="{x:Null}" StatusCode="{x:Null}" TimeOutMs="{x:Null}" Connection="Robot" DisplayName="MLSkill" ExternApiFileType="JSON" sap:VirtualizedContainerService.HintSize="433.6,443.2" sap2010:WorkflowViewState.IdRef="MLSkills_1" Item="[strText]" JsonResponse="[JSONResponse]" NextPageNum="2" RefreshList="False" TotalCount="2">
+            <uma:MLSkills.MLSkillList>
+              <scg:List x:TypeArguments="um:MLSkill" Capacity="4">
+                <um:MLSkill AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/0b453021-dbd9-46ff-b58f-1c009660cb16/479e9a0a-b128-4bb7-b120-ed305c50bd17/cluster-b/textsummarizationmlskill" AccountId="0b453021-dbd9-46ff-b58f-1c009660cb16" Description="" Id="073569c3-6f2a-4cd5-86b9-13c08ba02067" InputDescription="Text to be summarized as a string. On small inputs (less than 300 characters), the model will just return the unaltered input" InputType="JSON" Name="TextSummarizationMLSkill" OutputDescription="Summarized text as a string." ProjectId="c7e0941d-1dd2-4498-aa65-68ddf1e72ef0" TenantId="479e9a0a-b128-4bb7-b120-ed305c50bd17" />
+                <x:Reference>__ReferenceID0</x:Reference>
+              </scg:List>
+            </uma:MLSkills.MLSkillList>
+            <uma:MLSkills.SelectedMLSkill>
+              <um:MLSkill x:Name="__ReferenceID0" AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/0b453021-dbd9-46ff-b58f-1c009660cb16/479e9a0a-b128-4bb7-b120-ed305c50bd17/cluster-b/textsummarizationmlskill1" AccountId="0b453021-dbd9-46ff-b58f-1c009660cb16" Description="" Id="d6b69eeb-a5ce-4fb4-8a96-05aa09753c1d" InputDescription="Text to be summarized as a string. On small inputs (less than 300 characters), the model will just return the unaltered input" InputType="JSON" Name="TextSummarizationMLSkill1" OutputDescription="Summarized text as a string." ProjectId="0f79ec8c-112a-4755-8801-db99c7d03222" TenantId="479e9a0a-b128-4bb7-b120-ed305c50bd17" />
+            </uma:MLSkills.SelectedMLSkill>
+          </uma:MLSkills>
+          <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_textSummary]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[JSONResponse.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="499.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;MLSkill : Text Sumarization&quot; + Environment.NewLine + &quot;Took too long to respond. Check your Internet Connection and try again&quot;]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
   </Sequence>
 </Activity>

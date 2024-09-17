@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sentiment_Analysis" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.MLServices;assembly=UiPath.MLServices" xmlns:uma="clr-namespace:UiPath.MLServices.Activities;assembly=UiPath.MLServices.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sentiment_Analysis" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.MLServices;assembly=UiPath.MLServices" xmlns:uma="clr-namespace:UiPath.MLServices.Activities;assembly=UiPath.MLServices.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_dtFeedback" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_inputColumn" Type="InArgument(x:String)" />
@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1061.6,1754.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1061.6,2099.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sentiment_Analysis_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -53,6 +53,7 @@
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>UiPath.Excel</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -117,9 +118,10 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sentiment_Analysis" sap:VirtualizedContainerService.HintSize="636.8,1689.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Sentiment_Analysis" sap:VirtualizedContainerService.HintSize="736,2034.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtFeedback" />
     </Sequence.Variables>
@@ -128,15 +130,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[in_targetSentiment]" DataTable="[in_dtFeedback]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="574.4,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[in_targetConfidence]" DataTable="[in_dtFeedback]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="574.4,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtFeedback]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="574.4,1022.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[in_targetSentiment]" DataTable="[in_dtFeedback]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="673.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[in_targetConfidence]" DataTable="[in_dtFeedback]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="673.6,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtFeedback]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="673.6,1366.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540.8,824.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="640,1168.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="JSONResponse" />
               <Variable x:TypeArguments="njl:JObject" Name="JSONObject" />
@@ -146,46 +148,73 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uma:MLSkills ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Name="{x:Null}" NumberOfRetries="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" StatusCode="{x:Null}" TimeOutMs="{x:Null}" ApiKey="&lt;enter-your-api-key&gt;" Connection="Robot" DisplayName="MLSkill" ExternApiFileType="JSON" sap:VirtualizedContainerService.HintSize="478.4,443.2" sap2010:WorkflowViewState.IdRef="MLSkills_1" Item="[CurrentRow(in_inputColumn).ToString]" JsonResponse="[JSONResponse]" NextPageNum="2" RefreshList="False" SkillURL="&lt;enter-your-ml-skill-url&gt;" TotalCount="3">
-              <uma:MLSkills.MLSkillList>
-                <scg:List x:TypeArguments="um:MLSkill" Capacity="4">
-                  <x:Reference>__ReferenceID0</x:Reference>
-                  <um:MLSkill AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/0b453021-dbd9-46ff-b58f-1c009660cb16/479e9a0a-b128-4bb7-b120-ed305c50bd17/cluster-b/textsummarizationmlskill" AccountId="0b453021-dbd9-46ff-b58f-1c009660cb16" Description="" Id="073569c3-6f2a-4cd5-86b9-13c08ba02067" InputDescription="Text to be summarized as a string. On small inputs (less than 300 characters), the model will just return the unaltered input" InputType="JSON" Name="TextSummarizationMLSkill" OutputDescription="Summarized text as a string." ProjectId="c7e0941d-1dd2-4498-aa65-68ddf1e72ef0" TenantId="479e9a0a-b128-4bb7-b120-ed305c50bd17" />
-                  <um:MLSkill AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/0b453021-dbd9-46ff-b58f-1c009660cb16/479e9a0a-b128-4bb7-b120-ed305c50bd17/cluster-b/textsummarizationmlskill1" AccountId="0b453021-dbd9-46ff-b58f-1c009660cb16" Description="" Id="d6b69eeb-a5ce-4fb4-8a96-05aa09753c1d" InputDescription="Text to be summarized as a string. On small inputs (less than 300 characters), the model will just return the unaltered input" InputType="JSON" Name="TextSummarizationMLSkill1" OutputDescription="Summarized text as a string." ProjectId="0f79ec8c-112a-4755-8801-db99c7d03222" TenantId="479e9a0a-b128-4bb7-b120-ed305c50bd17" />
-                </scg:List>
-              </uma:MLSkills.MLSkillList>
-              <uma:MLSkills.SelectedMLSkill>
-                <um:MLSkill x:Name="__ReferenceID0" AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/0b453021-dbd9-46ff-b58f-1c009660cb16/479e9a0a-b128-4bb7-b120-ed305c50bd17/cluster-b/sentimentanalysismlskill" AccountId="0b453021-dbd9-46ff-b58f-1c009660cb16" Description="" Id="405162aa-9be4-4cbb-9025-2575a2644a1c" InputDescription="Text to be analyzed.For example:&quot;I am dissatisfied with this service&quot;" InputType="JSON" Name="SentimentAnalysisMLSkill" OutputDescription="JSON with class name and confidence on that class prediction (between 0-1). Class prediction can be one of: &quot;Very Negative&quot;, &quot;Negative&quot;, &quot;Neutral&quot;, &quot;Positive&quot;, &quot;Very Positive&quot;. For example: {&quot;sentiment&quot;: &quot;Very Negative&quot;, &quot;confidence&quot;: 0.97}" ProjectId="0f79ec8c-112a-4755-8801-db99c7d03222" TenantId="479e9a0a-b128-4bb7-b120-ed305c50bd17" />
-              </uma:MLSkills.SelectedMLSkill>
-            </uma:MLSkills>
-            <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="478.4,122.4" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[JSONObject]" JsonString="[JSONResponse]" />
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,170.66666666666666" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-              <ui:MultipleAssign.AssignOperations>
-                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:Object">[CurrentRow(in_targetSentiment)]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:Object">[JSONObject("sentiment").ToString]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:Object">[CurrentRow(in_targetConfidence)]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:Object">[Math.Round(CDbl(JSONObject("confidence")) * 100, 0).ToString() + "%"]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                </scg:List>
-              </ui:MultipleAssign.AssignOperations>
-            </ui:MultipleAssign>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="577.6,1080" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <Sequence sap:VirtualizedContainerService.HintSize="540.8,825.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uma:MLSkills ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Name="{x:Null}" NumberOfRetries="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" StatusCode="{x:Null}" TimeOutMs="{x:Null}" ApiKey="&lt;enter-your-api-key&gt;" Connection="Robot" DisplayName="MLSkill" ExternApiFileType="JSON" sap:VirtualizedContainerService.HintSize="478.4,443.2" sap2010:WorkflowViewState.IdRef="MLSkills_1" Item="[CurrentRow(in_inputColumn).ToString]" JsonResponse="[JSONResponse]" NextPageNum="2" RefreshList="False" SkillURL="&lt;enter-your-ml-skill-url&gt;" TotalCount="3">
+                    <uma:MLSkills.MLSkillList>
+                      <scg:List x:TypeArguments="um:MLSkill" Capacity="4">
+                        <x:Reference>__ReferenceID0</x:Reference>
+                        <um:MLSkill AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/0b453021-dbd9-46ff-b58f-1c009660cb16/479e9a0a-b128-4bb7-b120-ed305c50bd17/cluster-b/textsummarizationmlskill" AccountId="0b453021-dbd9-46ff-b58f-1c009660cb16" Description="" Id="073569c3-6f2a-4cd5-86b9-13c08ba02067" InputDescription="Text to be summarized as a string. On small inputs (less than 300 characters), the model will just return the unaltered input" InputType="JSON" Name="TextSummarizationMLSkill" OutputDescription="Summarized text as a string." ProjectId="c7e0941d-1dd2-4498-aa65-68ddf1e72ef0" TenantId="479e9a0a-b128-4bb7-b120-ed305c50bd17" />
+                        <um:MLSkill AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/0b453021-dbd9-46ff-b58f-1c009660cb16/479e9a0a-b128-4bb7-b120-ed305c50bd17/cluster-b/textsummarizationmlskill1" AccountId="0b453021-dbd9-46ff-b58f-1c009660cb16" Description="" Id="d6b69eeb-a5ce-4fb4-8a96-05aa09753c1d" InputDescription="Text to be summarized as a string. On small inputs (less than 300 characters), the model will just return the unaltered input" InputType="JSON" Name="TextSummarizationMLSkill1" OutputDescription="Summarized text as a string." ProjectId="0f79ec8c-112a-4755-8801-db99c7d03222" TenantId="479e9a0a-b128-4bb7-b120-ed305c50bd17" />
+                      </scg:List>
+                    </uma:MLSkills.MLSkillList>
+                    <uma:MLSkills.SelectedMLSkill>
+                      <um:MLSkill x:Name="__ReferenceID0" AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/0b453021-dbd9-46ff-b58f-1c009660cb16/479e9a0a-b128-4bb7-b120-ed305c50bd17/cluster-b/sentimentanalysismlskill" AccountId="0b453021-dbd9-46ff-b58f-1c009660cb16" Description="" Id="405162aa-9be4-4cbb-9025-2575a2644a1c" InputDescription="Text to be analyzed.For example:&quot;I am dissatisfied with this service&quot;" InputType="JSON" Name="SentimentAnalysisMLSkill" OutputDescription="JSON with class name and confidence on that class prediction (between 0-1). Class prediction can be one of: &quot;Very Negative&quot;, &quot;Negative&quot;, &quot;Neutral&quot;, &quot;Positive&quot;, &quot;Very Positive&quot;. For example: {&quot;sentiment&quot;: &quot;Very Negative&quot;, &quot;confidence&quot;: 0.97}" ProjectId="0f79ec8c-112a-4755-8801-db99c7d03222" TenantId="479e9a0a-b128-4bb7-b120-ed305c50bd17" />
+                    </uma:MLSkills.SelectedMLSkill>
+                  </uma:MLSkills>
+                  <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="478.4,122.4" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[JSONObject]" JsonString="[JSONResponse]" />
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,171.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(in_targetSentiment)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[JSONObject("sentiment").ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(in_targetConfidence)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[Math.Round(CDbl(JSONObject("confidence")) * 100, 0).ToString() + "%"]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="544,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;MLSkill : Sentiment Analysis&quot; + Environment.NewLine + &quot;Took too long to respond. Check your Internet Connection and try again&quot;]" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:WriteRange AddHeaders="True" DataTable="[in_dtFeedback]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="574.6666666666666,138.66666666666666" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Output\Data.xlsx">
+    <ui:WriteRange AddHeaders="True" DataTable="[in_dtFeedback]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="673.6,139.2" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Output\Data.xlsx">
       <ui:WriteRange.StartingCell>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />

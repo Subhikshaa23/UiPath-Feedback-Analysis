@@ -12,6 +12,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "saveChart1&Sequence_13",
         "saveChart&Sequence_13",
         "dtFeedBack&Sequence_4",
         "arraySentiments&Sequence_4",
